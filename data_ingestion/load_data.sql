@@ -58,31 +58,26 @@ CREATE TABLE IF NOT EXISTS techfab.fact_sales
 );
 
 COPY techfab.dim_customer
-FROM 's3://dsa-projeto2/dados/dim_customer.csv'
+FROM 's3://<PATH_DIM_CUSTOMER_FILE>'
 IAM_ROLE 'arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/<YOUR_ROLE_NAME>'
-
 CSV;
 
-COPY techfab.dim_localidade
-FROM 's3://dsa-projeto2/dados/dim_localidade.csv'
+COPY techfab.dim_location
+FROM 's3://<PATH_DIM_LOCATION_FILE>'
 IAM_ROLE 'arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/<YOUR_ROLE_NAME>'
-
 CSV;
 
 COPY techfab.dim_product
-FROM 's3://dsa-projeto2/dados/dim_product.csv'
+FROM 's3://<PATH_PRODUCT_FILE>'
 IAM_ROLE 'arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/<YOUR_ROLE_NAME>'
-
 CSV;
 
 COPY techfab.dim_time
-FROM 's3://dsa-projeto2/dados/dim_time.csv'
+FROM 's3://<PATH_DIM_TIME_FILE>'
 IAM_ROLE 'arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/<YOUR_ROLE_NAME>'
-
 CSV;
 
 COPY techfab.fact_sales
-FROM 's3://dsa-projeto2/dados/fact_sales.csv'
+FROM '<PATH_FACT_SALES_FILE>'
 IAM_ROLE 'arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/<YOUR_ROLE_NAME>'
-
 CSV;
